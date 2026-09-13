@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AnimeVerse — discover anime, search titles, explore genres and save a watchlist.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>AnimeVerse — Discover Anime</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home">🍥 <span>AnimeVerse</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#trending">Trending</a>
+      <a href="#watchlist">Watchlist <b id="watchCount">0</b></a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+        <h1>Discover your next <span>anime obsession.</span></h1>
+        <p>Search anime, explore ratings and genres, and save shows you want to remember.</p>
+        <a class="primary-btn" href="#trending">Explore Anime →</a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+    </section>
+
+    <section class="toolbar" aria-label="Anime search">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search One Piece, Naruto, Frieren..." autocomplete="off">
+      </div>
+      <select id="genreFilter" aria-label="Filter by genre">
+        <option value="">All genres</option>
+        <option>Action</option><option>Adventure</option><option>Comedy</option>
+        <option>Drama</option><option>Fantasy</option><option>Romance</option>
+        <option>Sci-Fi</option><option>Sports</option><option>Supernatural</option>
+      </select>
+      <button class="search-btn" id="searchBtn">Search</button>
+    </section>
+
+    <section id="trending" class="section">
+      <div class="section-heading">
+        <div><span class="section-kicker">LIVE FROM ANIME DATA</span><h2>🔥 Trending Anime</h2></div>
+        <span id="resultCount" class="result-count"></span>
+      </div>
+      <div id="animeGrid" class="anime-grid">
+        <div class="loading">Loading anime…</div>
+      </div>
+      <p id="emptyState" class="empty-state" hidden>No anime found. Try another search.</p>
+    </section>
+
+    <section id="watchlist" class="section">
+      <div class="section-heading">
+        <div><span class="section-kicker">SAVED ON THIS DEVICE</span><h2>❤️ My Watchlist</h2></div>
+      </div>
+      <div id="watchGrid" class="anime-grid"></div>
+      <p id="watchEmpty" class="empty-state">Your watchlist is empty. Open an anime and tap “Add to watchlist”.</p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>🍥 AnimeVerse</strong>
+    <p>Anime discovery site. It does not host or distribute copyrighted episodes.</p>
+    <small>Data supplied by Jikan, an unofficial MyAnimeList API. © 2026 AnimeVerse</small>
+  </footer>
+
+  <div class="modal" id="animeModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
